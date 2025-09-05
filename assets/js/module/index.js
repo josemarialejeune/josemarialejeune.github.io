@@ -10,7 +10,6 @@ const firebaseConfig = {
 };
 const firebase = initializeApp(firebaseConfig);
 const db = getFirestore(firebase);
-db.settings({ experimentalForceLongPolling: true });
 const APP_BUSINESS_NAME = "JSYSTEM";
 const APP_URL_PAGE = window.location.href.replace('/index.html', '');
 const APP_URL_HOST = window.location.protocol + '//' + window.location.host;
