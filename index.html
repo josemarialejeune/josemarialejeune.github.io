@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='es'>
+    <head>
+     <title>jSystem - Gestor de Microservicios</title>
+     <meta charset='utf-8'>
+     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
+     <meta name="description" content="Aplicacion Web para la gestion comercial" />
+     <link rel="icon" href="assets/images/jsystem.ico" sizes="32x32"> <!-- Favicon -->
+     <link rel="stylesheet" href="assets/css/jsystem.css" defer /><!-- Framework CSS W3CSS -->
+     <link rel="stylesheet" href="assets/css/custom.css" defer /><!-- CSS personalizados -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons|Google+Material+Icons" defer> <!-- Fuente Roboto -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> <!-- Iconos -->
+     <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
+     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
+    </head>
+    <body class="w3-ios-background">
+    <style>.w3-input:focus{outline:0!important;}.app-loading {position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: white; display: flex;justify-content: center;align-items: center; z-index: 9999; transition: 1s all; opacity: 0;}.app-loading.app-show {opacity: 1;}.app-loading .app-spin, .app-modal-loading .app-spin { border: 3px solid hsla(185, 100%, 62%, 0.2);border-top-color: #3cefff;border-radius: 50%; width: 3em; height: 3em; animation: spin 1s linear infinite;}@keyframes spin {to{transform: rotate(360deg);}}body,h1,h2,h3,h4,h5,h6,p,a,table,input,span,div,main,ul,article,aside,header,footer{font-family: "Roboto",sans-serif}body,html{height:100%;width:100%;}</style>
+    <main id="app-wrapper">
+      <section id="app-loader" class="app-loading app-show">
+        <div class="app-spin"></div>
+      </section>
+      <section id="app-main"></section> <!-- vista html -->
+      <section id="app-code">
+        <script>
+          function signoutEvent() {
+            let event = new Object();
+            event.tag = "script";
+            event.attr = new Object();
+            event.attr.type = "module";
+            event.attr.src = "assets/js/signout/index.js";
+            window.app.nodeLoad("app-script");
+            window.app.nodeWrite(JSON.stringify(event), 1);
+          }
+        </script>
+      </section> <!-- codigo javascript opcional -->
+      <section id="app-script"></section> <!-- metodo app_script  de muypayJS -->
+      <script type="text/javascript" src="assets/js/jsystem.min.js" defer></script> <!-- Framework MuypayJS -->
+      <script type="text/javascript" src="assets/js/custom.js" defer></script> <!-- Scripts personalizados -->
+      <script type="module" src="assets/js/module/index.js"></script><!-- Inicializacion pagina -->
+    </main>
+   </body>
+   </html>
