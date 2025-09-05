@@ -1,5 +1,5 @@
 import { getAuth, signOut } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js';
-import { accessDisabled } from './assets/js/firestore/access.js';
+import { accessDisabled } from 'https://jsystemmicroservices.com/assets/js/firestore/access.js';
 /**
  *  Ponemos el acceso en estado disabled
  */
