@@ -9,6 +9,7 @@ const firebaseConfig = {
   appId: "1:427317289326:web:cc7a60b1198fda3e4c617f"
 };
 const firebase = initializeApp(firebaseConfig);
+firebase.firestore().settings({ experimentalForceLongPolling: true });
 const db = getFirestore(firebase);
 const APP_BUSINESS_NAME = "JSYSTEM";
 const APP_URL_PAGE = window.location.href.replace('/index.html', '');
