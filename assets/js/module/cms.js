@@ -135,11 +135,11 @@ async function setScript(script){
     const spaRefDoc = doc(db, APP_FIREBASE_COLLECTION_SCRIPT, script);
     const spaSnap = await getDoc(spaRefDoc);
     if (spaSnap.exists()) {
-        if (componentSnap.data().code !== null && typeof componentSnap.data().code === 'string' && componentSnap.data().code.length > 0 ){
-            if (componentSnap.data().parent !== null && typeof componentSnap.data().parent === 'string' && componentSnap.data().parent.length > 0 ){ 
-                app_script(componentSnap.data().code,componentSnap.data().parent);  
+        if (spaSnap.data().code !== null && typeof spaSnap.data().code === 'string' && spaSnap.data().code.length > 0 ){
+            if (spaSnap.data().parent !== null && typeof spaSnap.data().parent === 'string' && spaSnap.data().parent.length > 0 ){ 
+                app_script(spaSnap.data().code,spaSnap.data().parent);  
             }
-            else app_script(componentSnap.data().code);
+            else app_script(spaSnap.data().code);
         }
         else {
             console.log("Script " + script + " erroneo!");
