@@ -132,7 +132,7 @@ async function setModule(module){
  */
 async function setScript(script){
     if(script === null || typeof script !== 'string' || !script.length) return false;
-    const spaRefDoc = doc(db, APP_FIREBASE_COLLECTION_SCRIPT, module);
+    const spaRefDoc = doc(db, APP_FIREBASE_COLLECTION_SCRIPT, script);
     const spaSnap = await getDoc(spaRefDoc);
     if (spaSnap.exists()) {
         if (componentSnap.data().code !== null && typeof componentSnap.data().code === 'string' && componentSnap.data().code.length > 0 ){
