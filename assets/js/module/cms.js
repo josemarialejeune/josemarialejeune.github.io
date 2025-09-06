@@ -27,7 +27,7 @@ const APP_FIREBASE_PAGE_DEFAULT = 'jsystemManager';
  * @param {*} page 
  */
 async function setPage(page){
-    if(page === null || !is_string(page) || !page.length) page = APP_FIREBASE_PAGE_DEFAULT;
+    if(page === null || typeof page !== 'string' || !page.length) page = APP_FIREBASE_PAGE_DEFAULT;
     const spaRefDoc = doc(db, APP_FIREBASE_COLLECTION_PAGE, page);
     const spaSnap = await getDoc(spaRefDoc);
     if (spaSnap.exists()) {
@@ -79,7 +79,7 @@ async function setPage(page){
  * @param {*} module 
  */
 async function setModule(module){
-    if(module === null || !is_string(module) || !module.length) return false;
+    if(module === null || typeof module !== 'string' || !module.length) return false;
     const spaRefDoc = doc(db, APP_FIREBASE_COLLECTION_MODULE, module);
     const spaSnap = await getDoc(spaRefDoc);
     if (spaSnap.exists()) {
@@ -131,7 +131,7 @@ async function setModule(module){
  * @param {*} script 
  */
 async function setScript(script){
-    if(script === null || !is_string(script) || !script.length) return false;
+    if(script === null || typeof script !== 'string' || !script.length) return false;
     const spaRefDoc = doc(db, APP_FIREBASE_COLLECTION_SCRIPT, module);
     const spaSnap = await getDoc(spaRefDoc);
     if (spaSnap.exists()) {
