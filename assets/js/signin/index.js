@@ -13,8 +13,8 @@ signInWithPopup(auth, provider).then((result) => {
     window.app.session.init(jSystemManager);
     window.app.session.set('credential', JSON.stringify(credential), jSystemManager);
     window.app.session.set('user', JSON.stringify(result.user), jSystemManager);
-    let imageUrl = result.user.photoURL;
-    let userName = result.user.displayName;
+    window.app.session.set('avatar_icon_url', result.user.photoURL, jSystemManager);
+    window.app.session.set('avatar_name', result.user.displayName, jSystemManager);
     /**
      *  Procesamos la solicitud de autenticacion de Google
     */
@@ -27,12 +27,6 @@ signInWithPopup(auth, provider).then((result) => {
      */
     setScript("jsystemManagerPortalInitialize");
     setPage("jsystemManagerPortal");
-    /**
-     *  Usuario autenticado 
-     *  Imagen y nombre del usuario en el sidebar
-     */
-    document.getElementById('app-main-nav-avatar-image').src= imageUrl;
-    document.getElementById('app-main-nav-avatar-name').innerHTML= userName;
 }).catch((error) => {
     window.app.session.init(jSystemManager);
     window.app.session.set('error', JSON.stringify(error), jSystemManager);
