@@ -18,8 +18,8 @@ signInWithPopup(auth, provider).then((result) => {
      *  Usuario autenticado 
      *  Imagen y nombre del usuario en el sidebar
      */
-    window.app.nodeLoad('app-main-nav-avatar-image').src=result.user.photoURL;
-    window.app.nodeLoad('app-main-nav-avatar-name').innerHTML= result.user.displayName;
+    document.getElementById('app-main-nav-avatar-image').src=result.user.photoURL;
+    document.getElementById('app-main-nav-avatar-name').innerHTML= result.user.displayName;
     /**
      * Carga en la sesion del explorador
      */
