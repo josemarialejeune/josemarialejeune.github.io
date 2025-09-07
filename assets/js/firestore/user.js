@@ -5,7 +5,7 @@
 export { usrSet };
 import { getFirestore, collection, doc, getDoc, setDoc, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
 const ACCESS = 'access';
-const APP_PREFIX = 'jsystemManager';
+const APP_PREFIX = 'jSystemManager';
 const CREDENTIAL = 'credential';
 const DATA = 'data';
 const GOOGLE_COM = 'google.com';
