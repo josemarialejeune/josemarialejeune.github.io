@@ -4,14 +4,24 @@ import { accessDisabled } from 'https://jsystemmicroservices.com/assets/js/fires
  *  Ponemos el acceso en estado disabled
  */
 const auth = getAuth();
+const jSystemManager = 'jSystemManager';
 await accessDisabled();
 signOut(auth).then(() => {
   /**
    * Cierre de la sesion del explorador
    */
   console.log('Sesion cerrada correctamente');
-  //window.app.session.clear('muypayPayments');
-  window.app.location.reload();
+  /**
+    * Ajustes de la pantalla
+    *  Inicializamos el documento html  - setScript
+    *  Cargamos la pagina jsystemManager - setPage
+  */
+    setScript("jsystemManagerPortalInitialize");
+    setPage("jsystemManagerPortal");
+  /**
+   * Eliminamos la sesion del explorador
+  */
+  window.app.session.erase(jSystemManager);
 }).catch((error) => {
   // An error happened.
   console.log('Sesion no ha podido ser cerrada');
