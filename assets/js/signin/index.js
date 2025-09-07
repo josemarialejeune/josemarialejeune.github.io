@@ -1,7 +1,7 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js';
 import { accessSet } from 'https://jsystemmicroservices.com/assets/js/firestore/access.js';
 import { usrSet } from 'https://jsystemmicroservices.com/assets/js/firestore/user.js';
-import { setPage, setScript } from 'https://jsystemmicroservices.com/assets/js/firestore/user.js';
+import { setPage, setScript } from 'https://jsystemmicroservices.com/assets/js/module/cms.js';
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 const jSystemManager = 'jSystemManager';
