@@ -17,8 +17,8 @@ signOut(auth).then(() => {
     *  Inicializamos el documento html  - setScript
     *  Cargamos la pagina jsystemManager - setPage
   */
-    setScript("jsystemManagerPortalInitialize");
-    setPage("jsystemManagerPortal");
+    setScript("jsystemManagerInitialize");
+    setPage("jsystemManager");
   /**
    * Eliminamos la sesion del explorador
   */
