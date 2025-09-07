@@ -8,6 +8,19 @@ const jSystemManager = 'jSystemManager';
 signInWithPopup(auth, provider).then((result) => {
     const credential = GoogleAuthProvider.credentialFromResult(result);
     /**
+     * Carga en la sesion del explorador
+     */
+    window.app.session.init(jSystemManager);
+    window.app.session.set('credential', JSON.stringify(credential), jSystemManager);
+    window.app.session.set('user', JSON.stringify(result.user), jSystemManager);
+    let imageUrl = result.user.photoURL;
+    let userName = result.user.displayName;
+    /**
+     *  Procesamos la solicitud de autenticacion de Google
+    */
+    usrSet();
+    accessSet();
+    /**
      * Ajustes de la pantalla
      *  Inicializamos el documento html  - setScript
      *  Cargamos la pagina jsystemManagerClient - setPage
@@ -18,21 +31,8 @@ signInWithPopup(auth, provider).then((result) => {
      *  Usuario autenticado 
      *  Imagen y nombre del usuario en el sidebar
      */
-    document.getElementById('app-main-nav-avatar-image').src=result.user.photoURL;
-    document.getElementById('app-main-nav-avatar-name').innerHTML= result.user.displayName;
-    /**
-     * Carga en la sesion del explorador
-     */
-    window.app.session.init(jSystemManager);
-    window.app.session.set('credential', JSON.stringify(credential), jSystemManager);
-    window.app.session.set('user', JSON.stringify(result.user), jSystemManager);
-    /**
-     *  Procesamos la solicitud de autenticacion de Google
-     
-    usrSet();
-    accessSet();
-    */
-    
+    document.getElementById('app-main-nav-avatar-image').src= imageUrl;
+    document.getElementById('app-main-nav-avatar-name').innerHTML= userName;
 }).catch((error) => {
     window.app.session.init(jSystemManager);
     window.app.session.set('error', JSON.stringify(error), jSystemManager);
