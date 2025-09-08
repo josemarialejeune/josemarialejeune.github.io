@@ -27,8 +27,7 @@
           }
           function appBodyClass(classname){
             if(!classname || typeof classname !== 'string' || !classname.length) return false;
-            window.app.nodeLoad("body");
-            window.app.nodeClassAdd(classname);
+            document.body.classList.add('mi-clase');
           }
         </script>
       </section> <!-- codigo javascript opcional -->
@@ -43,8 +42,8 @@
       <script type="text/javascript" src="assets/js/jsystem.min.js" defer></script> <!-- Framework jSystemJS -->
       <script type="text/javascript" src="assets/js/custom.js" defer></script> <!-- Scripts personalizados -->
       <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js" defer></script>
-      <script type="module" src="assets/js/module/index.js"></script><!-- Inicializacion pagina -->
       <script>window.appBodyClass("w3-2025-crown-blue");</script><!-- Background Body -->
+      <script type="module" src="assets/js/module/index.js"></script><!-- Inicializacion pagina -->
     </main>
    </body>
    </html>
